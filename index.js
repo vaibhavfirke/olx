@@ -3,7 +3,7 @@ const cors=require("cors")
 const { connection } = require("./config/db");
 const { ProdRooute } = require("./routes/product.route");
 const app=express();
-const port=9001;
+const port=5001;
 
 app.use(cors({origin:"*"}))
 app.use(express.json());

@@ -3,7 +3,7 @@ const { Prodmodule } = require("../model/product.model");
 const ProdRooute=express.Router();
 
 ProdRooute.get("/",(req,res)=>{
-    res.send("WelCome to the olx api use /products")
+    res.send("WelCome to the olx api use /api/products")
 })
 
 ProdRooute.post("/products",async(req,res)=>{
