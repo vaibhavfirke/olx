@@ -1,13 +1,12 @@
-const mongoose=require("mongoose");
 const express=require("express");
 const { Prodmodule } = require("../model/product.model");
-const prodRooute=express.Router();
+const ProdRooute=express.Router();
 
-prodRooute.get("/",(req,res)=>{
-    res.send("get route")
+ProdRooute.get("/",(req,res)=>{
+    res.send("WelCome to the olx api use /products")
 })
 
-prodRooute.post("/products",async(req,res)=>{
+ProdRooute.post("/products",async(req,res)=>{
     const data=req.body;
     try{
         const prod=new Prodmodule(data);
@@ -19,7 +18,7 @@ prodRooute.post("/products",async(req,res)=>{
     }
 });
 
-prodRooute.get("/products",async(req,res)=>{
+ProdRooute.get("/products",async(req,res)=>{
     const filter=req.query.category
     const sort=req.query.sort;
     const limit=req.query.limit || 4;
@@ -52,7 +51,7 @@ prodRooute.get("/products",async(req,res)=>{
     }
 })
 
-prodRooute.delete("/products/:id",async(req,res)=>{
+ProdRooute.delete("/products/:id",async(req,res)=>{
     const ID=req.params.id;
     try{
         const data= await Prodmodule.findByIdAndDelete({_id:ID});
@@ -64,4 +63,4 @@ prodRooute.delete("/products/:id",async(req,res)=>{
 })
 
 
-module.exports={prodRooute}
+module.exports={ProdRooute}

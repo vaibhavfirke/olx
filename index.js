@@ -1,13 +1,13 @@
 const express=require("express");
 const cors=require("cors")
 const { connection } = require("./config/db");
-const { prodRooute } = require("./routes/product.route");
+const { ProdRooute } = require("./routes/product.route");
 const app=express();
 const port=9001;
 
 app.use(cors({origin:"*"}))
 app.use(express.json());
-app.use("/",prodRooute)
+app.use("/",ProdRooute)
 
 app.listen(port,async()=>{
     try{
