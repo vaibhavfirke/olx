@@ -7,7 +7,7 @@ const port=9001;
 
 app.use(cors({origin:"*"}))
 app.use(express.json());
-app.use("/",ProdRooute)
+app.use("/api",ProdRooute)
 
 app.listen(port,async()=>{
     try{
