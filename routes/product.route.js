@@ -42,7 +42,7 @@ ProdRooute.get("/products",async(req,res)=>{
             const prod=await Prodmodule.find().sort({"postedAt": s}).skip(skip).limit(limit);      
             res.send(prod); 
         }else{
-            const prod=await Prodmodule.find().limit(limit);      
+            const prod=await Prodmodule.find().sort({"postedAt": s}).skip(skip).limit(limit);      
             res.send(prod); 
         }
        
